@@ -3,8 +3,8 @@ Contributors:      10up, dsawardekar, tlovett1, jeffpaul
 Tags:              gutenberg, block, block migration, gutenberg migration, gutenberg conversion, convert to blocks
 Tested up to:      6.5
 Stable tag:        1.3.0
-License:           GPLv2 or later
-License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+License:           GPL-2.0-or-later
+License URI:       https://spdx.org/licenses/GPL-2.0-or-later.html
 
 Convert to Blocks transforms classic editor content to blocks on-the-fly.
 
