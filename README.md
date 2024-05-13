@@ -2,7 +2,7 @@
 
 > Transforms classic editor content to blocks on-the-fly.
 
-[![Support Level](https://img.shields.io/badge/support-stable-blue.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/convert-to-blocks.svg)](https://github.com/10up/convert-to-blocks/releases/latest) ![WordPress tested up to version](https://img.shields.io/wordpress/plugin/tested/convert-to-blocks?label=WordPress) [![GPLv2 License](https://img.shields.io/github/license/10up/convert-to-blocks.svg)](https://github.com/10up/convert-to-blocks/blob/develop/LICENSE.md)
+[![Support Level](https://img.shields.io/badge/support-stable-blue.svg)](#support-level) ![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/convert-to-blocks?label=Latest%20Release) ![WordPress Plugin: Tested WP Version](https://img.shields.io/wordpress/plugin/tested/convert-to-blocks?label=WordPress%20tested%20up%20to) ![WordPress Plugin Required PHP Version](https://img.shields.io/wordpress/plugin/required-php/convert-to-blocks?label=Requires%20PHP) ![WordPress Plugin: Required WP Version](https://img.shields.io/wordpress/plugin/wp-version/convert-to-blocks?label=Requires%20WordPress) [![GPL-2.0-or-later License](https://img.shields.io/github/license/10up/convert-to-blocks.svg)](https://github.com/10up/convert-to-blocks/blob/develop/LICENSE.md)
 
 [![E2E test](https://github.com/10up/convert-to-blocks/actions/workflows/cypress.yml/badge.svg)](https://github.com/10up/convert-to-blocks/actions/workflows/cypress.yml) [![Linting](https://github.com/10up/convert-to-blocks/actions/workflows/lint.yml/badge.svg)](https://github.com/10up/convert-to-blocks/actions/workflows/lint.yml) [![Dependency Review](https://github.com/10up/convert-to-blocks/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/10up/convert-to-blocks/actions/workflows/dependency-review.yml)
 
@@ -20,8 +20,6 @@ The `wp convert-to-blocks start` [WP-CLI command](https://github.com/10up/conver
 
 ## Requirements
 
-- PHP 8+
-- WordPress 6.1+
 - Inner Blocks Transforms is only supported with the Gutenberg Plugin 10.9.0+
 
 ## Installation
