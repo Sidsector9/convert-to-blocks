@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+## [1.3.0] - 2024-03-14
+### Added
+- Block Catalog integration, and pagination support (props [@dsawardekar](https://github.com/dsawardekar), [@iamdharmesh](https://github.com/iamdharmesh) via [#164](https://github.com/10up/convert-to-blocks/pull/164)).
+
+### Changed
+- Adjust `enable_block_editor` method only to alter posts that support the gutenbridge (props [@stormrockwell](https://github.com/stormrockwell), [@Sidsector9](https://github.com/Sidsector9), [@jeffpaul](https://github.com/jeffpaul), [@dsawardekar](https://github.com/dsawardekar) via [#136](https://github.com/10up/convert-to-blocks/pull/136)).
+- Bump WordPress "tested up to" version 6.5 (props [@QAharshalkadu](https://github.com/QAharshalkadu), [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9), [@sudip-md](https://github.com/sudip-md), [@dkotter](https://github.com/dkotter) via [#146](https://github.com/10up/convert-to-blocks/pull/146), [#161](https://github.com/10up/convert-to-blocks/pull/161)).
+- Replaced [lee-dohm/no-response](https://github.com/lee-dohm/no-response) with [actions/stale](https://github.com/actions/stale) to help with closing no-response/stale issues (props [@jeffpaul](https://github.com/jeffpaul) via [#159](https://github.com/10up/convert-to-blocks/pull/159)).
+- Bump Node version from 16 to 20 (props [@aaronjorbin](https://github.com/aaronjorbin), [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter) via [#160](https://github.com/10up/convert-to-blocks/pull/160)).
+- Bump `actions/upload-artifact` from v3 to v4 (props [@iamdharmesh](https://github.com/iamdharmesh) via [#162](https://github.com/10up/convert-to-blocks/pull/162)).
+
+### Security
+- Bump `follow-redirects` from 1.15.2 to 1.15.4 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#153](https://github.com/10up/convert-to-blocks/pull/153)).
+- Bump `browserify-sign` from 4.0.4 to 4.2.2 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#145](https://github.com/10up/convert-to-blocks/pull/145)).
+- Bump `@babel/traverse` from 7.11.5 to 7.23.7 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#155](https://github.com/10up/convert-to-blocks/pull/155)).
+
 ## [1.2.2] - 2023-10-16
 ### Changed
 - Bump WordPress "tested up to" version to 6.3 (props [@kmgalanakis](https://github.com/kmgalanakis), [@faisal-alvi](https://github.com/faisal-alvi), [@jeffpaul](https://github.com/jeffpaul), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#132](https://github.com/10up/convert-to-blocks/pull/132), [#134](https://github.com/10up/convert-to-blocks/pull/134)).
@@ -131,6 +147,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Initial release of Convert to Blocks.
 
 [Unreleased]: https://github.com/10up/convert-to-blocks/compare/trunk...develop
+[1.3.0]: https://github.com/10up/convert-to-blocks/compare/1.2.1...1.3.0
 [1.2.2]: https://github.com/10up/convert-to-blocks/compare/1.2.1...1.2.2
 [1.2.1]: https://github.com/10up/convert-to-blocks/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/10up/convert-to-blocks/compare/1.1.1...1.2.0
