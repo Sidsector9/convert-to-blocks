@@ -20,8 +20,21 @@ class MigrationCommand extends \WP_CLI_Command {
 	 * [--post_type=<post_type>]
 	 * : Optional comma delimited list of post types to migrate. Defaults to post,page
 	 *
+	 * [--per_page=<per_page>]
+	 * : Optional number of posts to migrate per batch. Defaults to no limit. Combine with --page to paginate.
+	 *
+	 * [--page=<page>]
+	 * : Optional page number to start migration from. Defaults to 1.
+	 *
 	 * [--only=<only>]
 	 * : Optional comma delimited list of post ids to migrate.
+	 *
+	 * [--catalog]
+	 * : Optional flag to only migrate classic editor tagged posts. Requires that Block
+	 * Catalog plugin is present and has been indexed.
+	 *
+	 * [--reset]
+	 * : Stops any currently running migration and resets the migration state.
 	 *
 	 * @param array $args The command args
 	 * @param array $opts The command opts
@@ -29,6 +42,24 @@ class MigrationCommand extends \WP_CLI_Command {
 	public function start( $args = [], $opts = [] ) {
 		$agent = new MigrationAgent();
 		$delay = 5; // 5 second delay between each tick
+
+		$opts['catalog'] = ! empty( $opts['catalog'] ) ? $opts['catalog'] : false;
+		$opts['catalog'] = filter_var( $opts['catalog'], FILTER_VALIDATE_BOOLEAN );
+
+		$opts['reset'] = ! empty( $opts['reset'] ) ? $opts['reset'] : false;
+		$opts['reset'] = filter_var( $opts['reset'], FILTER_VALIDATE_BOOLEAN );
+
+		$opts['per_page'] = ! empty( $opts['per_page'] ) ? intval( $opts['per_page'] ) : -1;
+		$opts['paged']    = ! empty( $opts['page'] ) ? intval( $opts['page'] ) : 1;
+
+		if ( $opts['reset'] ) {
+			$this->stop( $args, $opts );
+		}
+
+		// check if block-catalog plugin is installed
+		if ( $opts['catalog'] && ! defined( 'BLOCK_CATALOG_PLUGIN_VERSION' ) ) {
+			\WP_CLI::error( __( 'The Block Catalog plugin must be active and indexed to run in --catalog mode.', 'convert-to-blocks' ) );
+		}
 
 		if ( $agent->is_running() ) {
 			\WP_CLI::error( 'Please stop the currently running migration first.' );
@@ -47,6 +78,14 @@ class MigrationCommand extends \WP_CLI_Command {
 		}
 
 		\WP_CLI::log( 'Migration started...' );
+
+		$options   = [];
+		$options[] = 'Posts Per Page: ' . $opts['per_page'];
+		$options[] = 'Page: ' . ( ! empty( $opts['page'] ) ? $opts['page'] : 1 );
+		$options[] = 'Catalog: ' . ( $opts['catalog'] ? 'true' : 'false' );
+
+		\WP_CLI::log( 'Options: ' . implode( ', ', $options ) );
+
 		\WP_CLI::log( 'Please open the following URL in a browser to start the migration agent.' );
 		\WP_CLI::line( '' );
 		\WP_CLI::log( $result );
