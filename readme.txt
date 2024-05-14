@@ -41,7 +41,7 @@ Nested / Inner Block support does not work with Gutenberg bundled with WordPress
 
 == Changelog ==
 
-= 1.3.0 - 2024-05-13 =
+= 1.3.0 - 2024-05-14 =
 * **Added:** Block Catalog integration, and pagination support (props [@dsawardekar](https://github.com/dsawardekar), [@iamdharmesh](https://github.com/iamdharmesh) via [#164](https://github.com/10up/convert-to-blocks/pull/164)).
 * **Changed:** Adjust `enable_block_editor` method only to alter posts that support the gutenbridge (props [@stormrockwell](https://github.com/stormrockwell), [@Sidsector9](https://github.com/Sidsector9), [@jeffpaul](https://github.com/jeffpaul), [@dsawardekar](https://github.com/dsawardekar) via [#136](https://github.com/10up/convert-to-blocks/pull/136)).
 * **Changed:** Bump WordPress "tested up to" version 6.5 (props [@QAharshalkadu](https://github.com/QAharshalkadu), [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9), [@sudip-md](https://github.com/sudip-md), [@dkotter](https://github.com/dkotter) via [#146](https://github.com/10up/convert-to-blocks/pull/146), [#161](https://github.com/10up/convert-to-blocks/pull/161)).
