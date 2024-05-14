@@ -3,13 +3,13 @@
  * Plugin Name:       Convert to Blocks
  * Plugin URI:        https://github.com/10up/convert-to-blocks
  * Description:       Convert classic editor posts to blocks on the fly.
- * Version:           1.2.2
+ * Version:           1.3.0
  * Requires at least: 6.3
  * Requires PHP:      8.0
  * Author:            10up
  * Author URI:        https://10up.com
- * License:           GPLv2 or later
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+ * License:           GPL-2.0-or-later
+ * License URI:       https://spdx.org/licenses/GPL-2.0-or-later.html
  * Text Domain:       convert-to-blocks
  *
  * @package           convert-to-blocks
