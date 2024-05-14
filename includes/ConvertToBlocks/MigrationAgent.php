@@ -175,13 +175,27 @@ class MigrationAgent {
 			$post_type = [ 'post', 'page' ];
 		}
 
+		$posts_per_page = $opts['per_page'] ?? -1;
+		$page           = $opts['page'] ?? 1;
+
 		$query_params = [
 			'post_type'           => $post_type,
 			'post_status'         => 'publish',
 			'fields'              => 'ids',
-			'posts_per_page'      => -1,
+			'posts_per_page'      => $posts_per_page,
+			'paged'               => $page,
 			'ignore_sticky_posts' => true,
 		];
+
+		if ( ! empty( $opts['catalog'] ) ) {
+			$query_params['tax_query'] = [
+				[
+					'taxonomy' => BLOCK_CATALOG_TAXONOMY,
+					'field'    => 'slug',
+					'terms'    => [ 'core-classic' ],
+				],
+			];
+		}
 
 		/**
 		 * Filter query parameters for the query to get the posts to be updated.
@@ -208,6 +222,12 @@ class MigrationAgent {
 
 		$query = new \WP_Query( $query_params );
 		$posts = $query->posts;
+
+		if ( ! empty( $posts ) && defined( '\WP_CLI' ) && \WP_CLI ) {
+			$posts_per_page = $posts_per_page > 0 ? $posts_per_page : $query->found_posts;
+			$pages          = ceil( $query->found_posts / $posts_per_page );
+			\WP_CLI::line( sprintf( 'Pagination: %d/%d of %d', $page, $pages, $query->found_posts ) );
+		}
 
 		return $posts;
 	}

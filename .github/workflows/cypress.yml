@@ -16,17 +16,17 @@ jobs:
       matrix:
         core:
           - {name: 'WP latest', version: 'latest', continue: false}
-          - {name: 'WP minimum', version: 'WordPress/WordPress#6.1', continue: false}
+          - {name: 'WP minimum', version: 'WordPress/WordPress#6.3', continue: false}
           - {name: 'WP trunk', version: 'WordPress/WordPress#master', continue: true}
     steps:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Install dependencies
-      run: npm install
+      run: npm ci
     - name: Composer (optional)
       run: composer install
       continue-on-error: true
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v4
       with:
         node-version-file: '.nvmrc'
     - name: Build (optional)
@@ -40,7 +40,7 @@ jobs:
       run: npm run cypress:run
       continue-on-error: ${{ matrix.core.continue }}
     - name: Make artifacts available
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: failure()
       with:
         name: cypress-artifact

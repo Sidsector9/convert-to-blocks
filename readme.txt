@@ -1,12 +1,10 @@
 === Convert to Blocks ===
 Contributors:      10up, dsawardekar, tlovett1, jeffpaul
 Tags:              gutenberg, block, block migration, gutenberg migration, gutenberg conversion, convert to blocks
-Requires at least: 5.7
-Tested up to:      6.4
-Requires PHP:      8.0
-Stable tag:        1.2.2
-License:           GPLv2 or later
-License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+Tested up to:      6.5
+Stable tag:        1.3.0
+License:           GPL-2.0-or-later
+License URI:       https://spdx.org/licenses/GPL-2.0-or-later.html
 
 Convert to Blocks transforms classic editor content to blocks on-the-fly.
 
@@ -42,6 +40,17 @@ Nested / Inner Block support does not work with Gutenberg bundled with WordPress
 1. Bulk migration using the `wp convert-to-blocks start` WP-CLI command that converts posts iteratively in the browser without requireing any manual input.
 
 == Changelog ==
+
+= 1.3.0 - 2024-05-14 =
+* **Added:** Block Catalog integration, and pagination support (props [@dsawardekar](https://github.com/dsawardekar), [@iamdharmesh](https://github.com/iamdharmesh) via [#164](https://github.com/10up/convert-to-blocks/pull/164)).
+* **Changed:** Adjust `enable_block_editor` method only to alter posts that support the gutenbridge (props [@stormrockwell](https://github.com/stormrockwell), [@Sidsector9](https://github.com/Sidsector9), [@jeffpaul](https://github.com/jeffpaul), [@dsawardekar](https://github.com/dsawardekar) via [#136](https://github.com/10up/convert-to-blocks/pull/136)).
+* **Changed:** Bump WordPress "tested up to" version 6.5 (props [@QAharshalkadu](https://github.com/QAharshalkadu), [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9), [@sudip-md](https://github.com/sudip-md), [@dkotter](https://github.com/dkotter) via [#146](https://github.com/10up/convert-to-blocks/pull/146), [#161](https://github.com/10up/convert-to-blocks/pull/161)).
+* **Changed:** Replaced [lee-dohm/no-response](https://github.com/lee-dohm/no-response) with [actions/stale](https://github.com/actions/stale) to help with closing no-response/stale issues (props [@jeffpaul](https://github.com/jeffpaul) via [#159](https://github.com/10up/convert-to-blocks/pull/159)).
+* **Changed:** Bump Node version from 16 to 20 (props [@aaronjorbin](https://github.com/aaronjorbin), [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter) via [#160](https://github.com/10up/convert-to-blocks/pull/160)).
+* **Changed:** Bump `actions/upload-artifact` from v3 to v4 (props [@iamdharmesh](https://github.com/iamdharmesh) via [#162](https://github.com/10up/convert-to-blocks/pull/162)).
+* **Security:** Bump `follow-redirects` from 1.15.2 to 1.15.4 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#153](https://github.com/10up/convert-to-blocks/pull/153)).
+* **Security:** Bump `browserify-sign` from 4.0.4 to 4.2.2 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#145](https://github.com/10up/convert-to-blocks/pull/145)).
+* **Security:** Bump `@babel/traverse` from 7.11.5 to 7.23.7 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#155](https://github.com/10up/convert-to-blocks/pull/155)).
 
 = 1.2.2 - 2023-10-16 =
 * **Changed:** Bump WordPress "tested up to" version to 6.3 (props [@kmgalanakis](https://github.com/kmgalanakis), [@faisal-alvi](https://github.com/faisal-alvi), [@jeffpaul](https://github.com/jeffpaul), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#132](https://github.com/10up/convert-to-blocks/pull/132), [#134](https://github.com/10up/convert-to-blocks/pull/134)
@@ -91,43 +100,7 @@ Nested / Inner Block support does not work with Gutenberg bundled with WordPress
 * **Security:** Bump `engine.io` from 6.2.0 to 6.2.1 (props [@dependabot](https://github.com/apps/dependabot) via [#95](https://github.com/10up/convert-to-blocks/pull/95)).
 * **Security:** Bump `decode-uri-component` from 0.2.0 to 0.2.2 (props [@dependabot](https://github.com/apps/dependabot) via [#97](https://github.com/10up/convert-to-blocks/pull/97)).
 
-= 1.1.0 - 2022-07-27 =
-* **Added:** Support for bulk migrating Classic Editor items to the Block Editor, utilizing WP-CLI (props [@dsawardekar](https://github.com/dsawardekar), [@jeffpaul](https://github.com/jeffpaul), [@gthayer](https://github.com/gthayer), [@faisal-alvi](https://github.com/faisal-alvi) via [#70](https://github.com/10up/convert-to-blocks/pull/70)).
-* **Added:** Dependency security scanning (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#64](https://github.com/10up/convert-to-blocks/pull/64)).
-* **Fixed:** Added polyfill to fix PHPUnit tests (props [@cadic](https://github.com/cadic), [@iamdharmesh](https://github.com/iamdharmesh) via [#69](https://github.com/10up/convert-to-blocks/pull/69)).
-* **Changed:** Bump WordPress version "tested up to" 6.0 (props [@mohitwp](https://github.com/mohitwp), [@jeffpaul](https://github.com/jeffpaul), [@cadic](https://github.com/cadic), [@iamdharmesh](https://github.com/iamdharmesh) via [#59](https://github.com/10up/convert-to-blocks/pull/59), [#67](https://github.com/10up/convert-to-blocks/pull/67)).
-* **Security:** Bump `path-parse` from 1.0.6 to 1.0.7 (props [@dependabot](https://github.com/apps/dependabot) via [#55](https://github.com/10up/convert-to-blocks/pull/55)).
-* **Security:** Bump `ajv` from 6.10.0 to 6.12.6 (props [@dependabot](https://github.com/apps/dependabot) via [#60](https://github.com/10up/convert-to-blocks/pull/60)).
-* **Security:** Bump `tar` from 4.4.8 to 4.4.19 (props [@dependabot](https://github.com/apps/dependabot) via [#61](https://github.com/10up/convert-to-blocks/pull/61)).
-* **Security:** Bump `terser` from 4.6.0 to 4.8.1 (props [@dependabot](https://github.com/apps/dependabot) via [#74](https://github.com/10up/convert-to-blocks/pull/74)).
-
-= 1.0.2 - 2021-07-12 =
-* **Changed:** Bump WordPress version "tested up to" 5.8 (props [@psorensen](https://profiles.wordpress.org/psorensen/), [@BBerg10up](https://github.com/BBerg10up), [@jeffpaul](https://profiles.wordpress.org/jeffpaul/)).
-* **Changed:** Documentation updates (props [@hashimwarren](https://profiles.wordpress.org/hashimwarren/)).
-* **Fixed:** Transform Classic Editor blocks nested inside other blocks recursively (props [@dsawardekar](https://profiles.wordpress.org/dsawardekar/), [@MadtownLems](https://profiles.wordpress.org/madtownlems/), [@dinhtungdu](https://profiles.wordpress.org/dinhtungdu/), [@jeffpaul](https://profiles.wordpress.org/jeffpaul/)).
-* **Fixed:** Add Editor column to all supported post types (props [@dinhtungdu](https://profiles.wordpress.org/dinhtungdu/), [@scarne](https://profiles.wordpress.org/scarne/)).
-* **Fixed:** Display current editor for hierarchical posts (props [@kreppar](https://profiles.wordpress.org/kreppar/)).
-* **Security:** Bump `elliptic` from 6.5.3 to 6.5.4 (props [@dependabot](https://github.com/apps/dependabot)).
-* **Security:** Bump `y18n` from 3.2.1 to 3.2.2 (@dependabot](https://github.com/apps/dependabot)).
-* **Security:** Bump `ssri` from 6.0.1 to 6.0.2 (props [@dependabot](https://github.com/apps/dependabot)).
-* **Security:** Bump `lodash` from 4.17.20 to 4.17.21 (props [@dependabot](https://github.com/apps/dependabot)).
-* **Security:** Bump `hosted-git-info` from 2.7.1 to 2.8.9 (props [@dependabot](https://github.com/apps/dependabot)).
-* **Security:** Bump `browserslist` from 4.8.3 to 4.16.5 (props [@dependabot](https://github.com/apps/dependabot)).
-* **Security:** Bump `postcss` from 7.0.14 to 7.0.36 (props [@dependabot](https://github.com/apps/dependabot)).
-* **Security:** Bump `color-string` from 1.5.3 to 1.5.5 (props [@dependabot](https://github.com/apps/dependabot)).
-
-= 1.0.1 - 2021-02-08 =
-* **Added:** Label and updated icons for Classic and Block Editor in Editor column of post table list view (props [@dinhtungdu](https://profiles.wordpress.org/dinhtungdu/)).
-* **Added:**  Plugin banner and icon images (props [@dianapadron](https://profiles.wordpress.org/dianapadron/), [@jeffpaul](https://profiles.wordpress.org/jeffpaul/)).
-* **Added:**  Documentation updates, unit tests, PHPCS fixes, GitHub Actions and continuous integration testing (props [@barryceelen](https://profiles.wordpress.org/barryceelen/), [@dsawardekar](https://profiles.wordpress.org/dsawardekar/), [@dinhtungdu](https://profiles.wordpress.org/dinhtungdu/), [@jeffpaul](https://profiles.wordpress.org/jeffpaul/)).
-* **Fixed:** Issue where edit links force Classic Editor regardless of editor chosen (props [@dkotter](https://profiles.wordpress.org/dkotter/), [@tlovett1](https://profiles.wordpress.org/tlovett1/), [@dinhtungdu](https://profiles.wordpress.org/dinhtungdu/)).
-* **Security:** Bump `lodash` from 4.17.15 to 4.17.20 (props [@dependabot](https://github.com/apps/dependabot)).
-* **Security:** Bump `elliptic` from 6.5.2 to 6.5.3 (props [@dependabot](https://github.com/apps/dependabot)).
-* **Security:** Bump `acorn` from 6.4.0 to 6.4.2 (props [@dependabot](https://github.com/apps/dependabot)).
-* **Security:** Bump `dot-prop` from 4.2.0 to 4.2.1 (props [@dependabot](https://github.com/apps/dependabot)).
-
-= 1.0.0 - 2020-09-23 =
-* Initial release of Convert to Blocks.
+[View historical changelog details here](https://github.com/10up/convert-to-blocks/blob/develop/CHANGELOG.md).
 
 == Upgrade Notice ==
 
