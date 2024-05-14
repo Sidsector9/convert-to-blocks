@@ -6,6 +6,7 @@ vendor
 *.log
 
 dist
+build
 
 # Editors
 *.esproj
