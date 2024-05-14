@@ -26,7 +26,7 @@ class Assets {
 	public function register() {
 		wp_register_script(
 			'convert_to_blocks_editor',
-			plugins_url( 'dist/js/editor.js', CONVERT_TO_BLOCKS_PLUGIN ),
+			plugins_url( 'build/editor.js', CONVERT_TO_BLOCKS_PLUGIN ),
 			[
 				'wp-blocks',
 				'wp-element',
