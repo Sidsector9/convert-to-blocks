@@ -66,7 +66,9 @@ class ConvertToBlocksEditorSupport {
 						return null;
 					}
 
-					client.save();
+					setTimeout(() => {
+						client.save();
+					}, config.agent.save_delay);
 
 					return null;
 				}, 500);

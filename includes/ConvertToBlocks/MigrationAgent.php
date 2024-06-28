@@ -24,12 +24,18 @@ class MigrationAgent {
 			return;
 		}
 
+		$posts_to_update = get_option( 'ctb_posts_to_update' );
+		$cursor          = get_option( 'ctb_cursor' );
+		$posts_to_update = is_array( $posts_to_update ) ? $posts_to_update : [];
+		$post_id         = $posts_to_update[ $cursor ] ?? 0;
+
 		wp_localize_script(
 			'convert_to_blocks_editor',
 			'convert_to_blocks_agent',
 			[
 				'agent' => [
-					'next' => $this->next(),
+					'next'       => $this->next(),
+					'save_delay' => apply_filters( 'convert_to_blocks_save_delay', 500, $post_id )
 				],
 			]
 		);
