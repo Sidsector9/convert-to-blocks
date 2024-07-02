@@ -66,9 +66,15 @@ class ConvertToBlocksEditorSupport {
 						return null;
 					}
 
-					setTimeout(() => {
+					const saveDelay = config?.agent?.save_delay || 0;
+
+					if (saveDelay > 0) {
+						setTimeout(() => {
+							client.save();
+						}, saveDelay);
+					} else {
 						client.save();
-					}, config.agent.save_delay);
+					}
 
 					return null;
 				}, 500);

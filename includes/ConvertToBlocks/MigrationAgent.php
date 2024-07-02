@@ -35,7 +35,7 @@ class MigrationAgent {
 			[
 				'agent' => [
 					'next'       => $this->next(),
-					'save_delay' => apply_filters( 'convert_to_blocks_save_delay', 500, $post_id )
+					'save_delay' => apply_filters( 'convert_to_blocks_save_delay', 0, $post_id )
 				],
 			]
 		);
